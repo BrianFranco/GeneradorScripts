@@ -36,6 +36,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.lblInformacion = new System.Windows.Forms.Label();
+            this.LboxListaNovedad = new System.Windows.Forms.ListBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAbrirCarpeta
@@ -51,9 +54,9 @@
             // lboxListaArchivos
             // 
             this.lboxListaArchivos.FormattingEnabled = true;
-            this.lboxListaArchivos.Location = new System.Drawing.Point(2, 52);
+            this.lboxListaArchivos.Location = new System.Drawing.Point(13, 52);
             this.lboxListaArchivos.Name = "lboxListaArchivos";
-            this.lboxListaArchivos.Size = new System.Drawing.Size(491, 212);
+            this.lboxListaArchivos.Size = new System.Drawing.Size(480, 212);
             this.lboxListaArchivos.TabIndex = 1;
             // 
             // openFileDialog1
@@ -66,7 +69,7 @@
             // lblCodigoCompleto
             // 
             this.lblCodigoCompleto.AutoSize = true;
-            this.lblCodigoCompleto.Location = new System.Drawing.Point(338, 330);
+            this.lblCodigoCompleto.Location = new System.Drawing.Point(519, 279);
             this.lblCodigoCompleto.Name = "lblCodigoCompleto";
             this.lblCodigoCompleto.Size = new System.Drawing.Size(94, 13);
             this.lblCodigoCompleto.TabIndex = 2;
@@ -101,11 +104,27 @@
             this.lblInformacion.Size = new System.Drawing.Size(0, 16);
             this.lblInformacion.TabIndex = 5;
             // 
+            // LboxListaNovedad
+            // 
+            this.LboxListaNovedad.FormattingEnabled = true;
+            this.LboxListaNovedad.Location = new System.Drawing.Point(13, 301);
+            this.LboxListaNovedad.Name = "LboxListaNovedad";
+            this.LboxListaNovedad.Size = new System.Drawing.Size(480, 95);
+            this.LboxListaNovedad.TabIndex = 6;
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.Path = "C:\\Users\\Brian\\Desktop\\Practica FileDialog";
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LboxListaNovedad);
             this.Controls.Add(this.lblInformacion);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnGenerar);
@@ -114,6 +133,7 @@
             this.Controls.Add(this.btnAbrirCarpeta);
             this.Name = "FormularioPrincipal";
             this.Text = "Generador de Scripts";
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +149,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Label lblInformacion;
+        private System.Windows.Forms.ListBox LboxListaNovedad;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 

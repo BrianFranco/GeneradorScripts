@@ -55,5 +55,19 @@ namespace WindowsFormsApp1
         {
             lboxListaArchivos.Items.Remove(lboxListaArchivos.SelectedItem);
         }
+
+        private void fileSystemWatcher1_Changed(object sender, FileSystemEventArgs e)
+        {
+            GetFiles();
+        }
+        private void GetFiles()
+        {
+            string path = @"C:\Users\Brian\Desktop\Practica FileDialog\";
+            string[] lista = Directory.GetFiles(path);
+            foreach (var archivo in lista)
+            {
+                LboxListaNovedad.Items.Add(archivo);
+            }
+        }
     }
 }
